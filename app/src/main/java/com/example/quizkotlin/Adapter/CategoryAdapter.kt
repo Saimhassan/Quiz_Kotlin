@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizkotlin.Interface.IOnRecyclerViewItemClickListener
@@ -25,7 +26,13 @@ class CategoryAdapter(internal var context: Context,
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+         holder.txt_category_name.text = categoryList[position].name
+        holder.setiOnRecyclerViewItemClickListener(object:IOnRecyclerViewItemClickListener{
+            override fun onClick(view: View?, position: Int) {
+                Toast.makeText(context,"Click on"+categoryList[position].name,Toast.LENGTH_SHORT).show()
+            }
 
+        })
     }
 
     inner class MyViewHolder(itemView:View):RecyclerView.ViewHolder(itemView),View.OnClickListener{
