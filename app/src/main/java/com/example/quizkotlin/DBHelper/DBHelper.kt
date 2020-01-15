@@ -73,7 +73,7 @@ class DBHelper(context:Context):SQLiteAssetHelper(context,DB_NAME,null,DB_VER) {
         }
         cursor.close()
         db.close()
-        return questionList!!
+        return questionList
     }
 
 }
