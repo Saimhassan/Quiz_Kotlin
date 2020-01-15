@@ -1,6 +1,7 @@
 package com.example.quizkotlin.Adapter
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -13,15 +14,18 @@ import com.example.quizkotlin.R
 class CategoryAdapter(internal var context: Context,
                       internal var categoryList: List<Category>):RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+
+        val itemView = LayoutInflater.from(context).inflate(R.layout.layout_category_item,parent,false)
+        return MyViewHolder(itemView)
     }
 
     override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return categoryList.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     inner class MyViewHolder(itemView:View):RecyclerView.ViewHolder(itemView),View.OnClickListener{
